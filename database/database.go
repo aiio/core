@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm/schema"
 )
 
-func InitConn(engine, dsn string) *gorm.DB {
+func InitConn(engine, dsn, tablePrefix string) *gorm.DB {
 	var dialector gorm.Dialector
 	switch engine {
 	case "mysql":
@@ -16,15 +16,18 @@ func InitConn(engine, dsn string) *gorm.DB {
 			DSN:               dsn,
 			DefaultStringSize: 191,
 		})
+
 	case "sqlite":
 		dialector = sqlite.Open(dsn)
 	default:
 		panic("engine error")
 	}
 
-	SqlDB, err := gorm.Open(dialector, &gorm.Config{
+	Db, err := gorm.Open(dialector, &gorm.Config{
+
 		SkipDefaultTransaction: true,
 		NamingStrategy: schema.NamingStrategy{
+			TablePrefix:   tablePrefix,
 			SingularTable: true,
 		},
 		PrepareStmt:                              true,
@@ -33,7 +36,8 @@ func InitConn(engine, dsn string) *gorm.DB {
 	if err != nil {
 		panic(fmt.Sprintf("InitSqlLite err:%v,dsn:%+v", err, dsn))
 	}
-	return SqlDB
+
+	return Db
 }
 
 func MigrateAndComment(db *gorm.DB, comment string, model interface{}) {

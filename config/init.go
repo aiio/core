@@ -40,6 +40,7 @@ func init() {
 		Database: Database{
 			Engine: GetDefaultEnv("MSQL_ENGINE", "mysql"),
 			DSN:    GetDefaultEnv("MSQL_DSN", "root:123456(127.0.0.1:3306)/dev?charset=utf8mb4&parseTime=True&loc=Local"),
+			Prefix: GetDefaultEnv("MSQL_PREFIX", ""),
 		},
 		Jwt: JWT{
 			SecretKey: GetDefaultEnv("JWT_SECRET_KEY", "cnbattle"),
