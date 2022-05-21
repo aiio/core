@@ -31,19 +31,19 @@ type Client interface {
 }
 
 func NewSmsClient() (Client, error) {
-	switch config.GetEnv("SMS_PROVIDER") {
+	switch config.V.SMS.Provider {
 	case Aliyun:
-		return NewAliyunClient(config.GetEnv("SMS_ACCESS_ID"), config.GetEnv("SMS_ACCESS_KEY"),
-			config.GetEnv("SMS_SIGN"), config.GetEnv("SMS_TEMPLATE"))
+		return NewAliyunClient(config.V.SMS.AccessID, config.V.SMS.AccessKey,
+			config.V.SMS.Sign, config.V.SMS.Template)
 	case TencentCloud:
-		return NewTencentClient(config.GetEnv("SMS_ACCESS_ID"), config.GetEnv("SMS_ACCESS_KEY"),
-			config.GetEnv("SMS_SIGN"), config.GetEnv("SMS_TEMPLATE"), config.GetEnv("SMS_APP_ID"))
+		return NewTencentClient(config.V.SMS.AccessID, config.V.SMS.AccessKey,
+			config.V.SMS.Sign, config.V.SMS.Template, config.V.SMS.AppID)
 	case VolcEngine:
-		return NewVolcClient(config.GetEnv("SMS_ACCESS_ID"), config.GetEnv("SMS_ACCESS_KEY"),
-			config.GetEnv("SMS_SIGN"), config.GetEnv("SMS_TEMPLATE"), config.GetEnv("SMS_ACCOUNT"))
+		return NewVolcClient(config.V.SMS.AccessID, config.V.SMS.AccessKey,
+			config.V.SMS.Sign, config.V.SMS.Template, config.V.SMS.Account)
 	case Huyi:
-		return NewHuyiClient(config.GetEnv("SMS_ACCESS_ID"), config.GetEnv("SMS_ACCESS_KEY"), config.GetEnv("SMS_TEMPLATE"))
+		return NewHuyiClient(config.V.SMS.AccessID, config.V.SMS.AccessKey, config.V.SMS.Template)
 	default:
-		return nil, fmt.Errorf("unsupported provider: %s", config.GetEnv("SMS_PROVIDER"))
+		return nil, fmt.Errorf("unsupported provider: %s", config.V.SMS.Provider)
 	}
 }

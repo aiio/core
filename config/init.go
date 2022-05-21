@@ -15,6 +15,7 @@ type configs struct {
 	Redis     Redis
 	Mail      Mail
 	MiniParam MiniParam
+	SMS       SMS
 }
 
 func (conf *configs) String() string {
@@ -62,6 +63,15 @@ func init() {
 		MiniParam: MiniParam{
 			AppId:     GetDefaultEnv("MINI_APP_ID", ""),
 			AppSecret: GetDefaultEnv("MINI_APP_SECRET", ""),
+		},
+		SMS: SMS{
+			Provider:  GetDefaultEnv("SMS_PROVIDER", ""),
+			AccessID:  GetDefaultEnv("SMS_ACCESS_ID", ""),
+			AccessKey: GetDefaultEnv("SMS_ACCESS_KEY", ""),
+			AppID:     GetDefaultEnv("SMS_APP_ID", ""),
+			Sign:      GetDefaultEnv("SMS_SIGN", ""),
+			Template:  GetDefaultEnv("SMS_TEMPLATE", ""),
+			Account:   GetDefaultEnv("SMS_ACCOUNT", ""),
 		},
 	}
 	if V.AppDebug {
