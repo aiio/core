@@ -16,15 +16,12 @@ func InitConn(engine, dsn, tablePrefix string) *gorm.DB {
 			DSN:               dsn,
 			DefaultStringSize: 191,
 		})
-
 	case "sqlite":
 		dialector = sqlite.Open(dsn)
 	default:
 		panic("engine error")
 	}
-
 	Db, err := gorm.Open(dialector, &gorm.Config{
-
 		SkipDefaultTransaction: true,
 		NamingStrategy: schema.NamingStrategy{
 			TablePrefix:   tablePrefix,
@@ -36,7 +33,6 @@ func InitConn(engine, dsn, tablePrefix string) *gorm.DB {
 	if err != nil {
 		panic(fmt.Sprintf("InitSqlLite err:%v,dsn:%+v", err, dsn))
 	}
-
 	return Db
 }
 
