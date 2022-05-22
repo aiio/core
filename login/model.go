@@ -34,10 +34,10 @@ type AuthRule struct {
 // UserAuth 用户授权表
 type UserAuth struct {
 	ID          uint           `gorm:"primarykey" json:"-"`
-	UID         string         `gorm:"type:char(32);uniqueIndex" json:"uid" validate:"required"`                          // 用户ID
-	Scenes      string         `gorm:"type:char(32);uniqueIndex:idx_scenes_identity" json:"type" validate:"required"`     // 身份标识类型
-	Identity    string         `gorm:"type:char(32);uniqueIndex:idx_scenes_identity" json:"identity" validate:"required"` // 身份标识 上述对应的值
-	Certificate string         `gorm:"type:char(64)" json:"certificate" validate:"required"`                              // 密码
+	UID         string         `gorm:"type:char(32);uniqueIndex" json:"uid" validate:"required"` // 用户ID
+	Scenes      string         `gorm:"type:char(32);" json:"type" validate:"required"`           // 身份标识类型
+	Identity    string         `gorm:"type:char(32);" json:"identity" validate:"required"`       // 身份标识 上述对应的值
+	Certificate string         `gorm:"type:char(64)" json:"certificate" validate:"required"`     // 密码
 	CreatedAt   time.Time      `json:"-"`
 	UpdatedAt   time.Time      `json:"-"`
 	DeletedAt   gorm.DeletedAt `gorm:"index" json:"-"`
