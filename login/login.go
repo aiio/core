@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"strings"
+
 	"github.com/aiio/core/config"
 	"github.com/aiio/core/token"
 	"github.com/aiio/core/utils"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
-	"strings"
 )
 
 type AuthService struct {
@@ -102,9 +103,8 @@ func (u *AuthService) Registry(scenes, identify, certificate string) (tokenStr s
 		}
 		return token.GenerateToken(auth.UID, "user")
 	case "mini_program":
-		// 感送
-		appid := "wx42f6ab953554d9f4"
-		secret := "7a5b92278c5720f39be86870924a3a6d"
+		appid := config.V.MiniParam.AppId
+		secret := config.V.MiniParam.AppSecret
 		url := "https://api.weixin.qq.com/sns/jscode2session?appid=%v&secret=%v&js_code=%v&grant_type=authorization_code"
 		httpGet, err := utils.HTTPGet(fmt.Sprintf(url, appid, secret, identify))
 		if err != nil {
