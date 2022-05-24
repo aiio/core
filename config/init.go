@@ -8,6 +8,7 @@ import (
 
 type configs struct {
 	AppName   string
+	AppDomain string
 	AppDebug  bool
 	HttpPort  string
 	Database  Database
@@ -35,9 +36,10 @@ var V *configs
 
 func init() {
 	V = &configs{
-		AppName:  GetDefaultEnv("APP_NAME", "cnbattle"),
-		AppDebug: GetEnvToBool("APP_DEBUG"),
-		HttpPort: GetDefaultEnv("HTTP_PORT", "1993"),
+		AppName:   GetDefaultEnv("APP_NAME", "cnbattle"),
+		AppDomain: GetDefaultEnv("APP_DOMAIN", "http://192.168.31.240/"),
+		AppDebug:  GetEnvToBool("APP_DEBUG"),
+		HttpPort:  GetDefaultEnv("HTTP_PORT", "1993"),
 		Database: Database{
 			Engine: GetDefaultEnv("MSQL_ENGINE", "mysql"),
 			DSN:    GetDefaultEnv("MSQL_DSN", "root:123456(127.0.0.1:3306)/dev?charset=utf8mb4&parseTime=True&loc=Local"),
