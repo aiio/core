@@ -3,20 +3,20 @@ module github.com/aiio/core
 go 1.18
 
 require (
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1605
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1607
 	github.com/chromedp/cdproto v0.0.0-20220515234810-83d799542a04
 	github.com/chromedp/chromedp v0.8.1
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
-	github.com/go-playground/validator/v10 v10.4.1
+	github.com/go-playground/validator/v10 v10.11.0
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/gogf/gf v1.16.8
 	github.com/google/uuid v1.3.0
 	github.com/joho/godotenv v1.4.0
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.404
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.405
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.404
 	github.com/tidwall/gjson v1.14.1
 	github.com/volcengine/volc-sdk-golang v1.0.45
@@ -60,6 +60,7 @@ require (
 	golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898 // indirect
 	golang.org/x/net v0.0.0-20220520000938-2e3eb7b945c2 // indirect
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
+	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
