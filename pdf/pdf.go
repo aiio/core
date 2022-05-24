@@ -32,10 +32,10 @@ func Gen(url string) ([]byte, error) {
 		chromedp.ActionFunc(func(ctx context.Context) error {
 			printToPDFParams := page.PrintToPDF().WithPrintBackground(true)
 			//{"marginTop":5e-324,"marginBottom":5e-324,"marginLeft":5e-324,"marginRight":5e-324}
-			//printToPDFParams.MarginTop = .5
-			//printToPDFParams.MarginBottom = .5
-			//printToPDFParams.MarginLeft = .5
-			//printToPDFParams.MarginRight = .5
+			printToPDFParams.MarginTop = .4
+			printToPDFParams.MarginBottom = .4
+			printToPDFParams.MarginLeft = .5
+			printToPDFParams.MarginRight = .5
 			buf2, _, err := printToPDFParams.Do(ctx)
 			if err != nil {
 				return err
