@@ -15,6 +15,10 @@ type H struct {
 	Other interface{} `json:"other,omitempty"`
 }
 
+func RespErr(code int, msg string) *H {
+	return &H{Code: code, Msg: msg}
+}
+
 // Resp Resp
 func Resp(code int, msg string, data interface{}) *H {
 	return &H{Code: code, Msg: msg, Data: data}
