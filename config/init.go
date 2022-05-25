@@ -17,6 +17,7 @@ type configs struct {
 	Mail      Mail
 	MiniParam MiniParam
 	SMS       SMS
+	ETH       ETH
 }
 
 func (conf *configs) String() string {
@@ -74,6 +75,9 @@ func init() {
 			Sign:      GetDefaultEnv("SMS_SIGN", ""),
 			Template:  GetDefaultEnv("SMS_TEMPLATE", ""),
 			Account:   GetDefaultEnv("SMS_ACCOUNT", ""),
+		},
+		ETH: ETH{
+			Rpc: GetDefaultEnv("ETH_RPC", ""),
 		},
 	}
 	if V.AppDebug {
