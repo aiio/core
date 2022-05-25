@@ -15,6 +15,7 @@ type H struct {
 	Other interface{} `json:"other,omitempty"`
 }
 
+// RespErr 错误返回结构
 func RespErr(code int, msg string) *H {
 	return &H{Code: code, Msg: msg}
 }
