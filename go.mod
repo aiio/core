@@ -3,7 +3,7 @@ module github.com/aiio/core
 go 1.18
 
 require (
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1611
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1612
 	github.com/chromedp/cdproto v0.0.0-20220515234810-83d799542a04
 	github.com/chromedp/chromedp v0.8.2
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
@@ -16,8 +16,8 @@ require (
 	github.com/gogf/gf v1.16.8
 	github.com/google/uuid v1.3.0
 	github.com/joho/godotenv v1.4.0
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.407
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.407
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.408
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.408
 	github.com/tidwall/gjson v1.14.1
 	github.com/volcengine/volc-sdk-golang v1.0.45
 	go.uber.org/zap v1.21.0
