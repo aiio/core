@@ -39,7 +39,7 @@ func (s *Zinc) UpdateDocumentWithId(target, id string, body interface{}) {
 
 // UpdateDocument
 // Create/Update a document and index it for searches
-func (s *Zinc) UpdateDocument(target, body interface{}) {
+func (s *Zinc) UpdateDocument(target string, body interface{}) {
 	response, err := s.request().SetBody(body).
 		Put(s.Host + fmt.Sprintf("/api/%v/document", target))
 	log.Println(response.String())
@@ -47,7 +47,7 @@ func (s *Zinc) UpdateDocument(target, body interface{}) {
 }
 
 // Search 搜索
-func (s *Zinc) Search(target, body interface{}) (string, error) {
+func (s *Zinc) Search(target string, body interface{}) (string, error) {
 	response, err := s.request().SetBody(body).
 		Post(s.Host + fmt.Sprintf("/api/%v/_search", target))
 	return response.String(), err
