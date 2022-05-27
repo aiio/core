@@ -4,7 +4,6 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"log"
 
 	"github.com/go-resty/resty/v2"
 )
@@ -22,28 +21,49 @@ func NewZinc(host string, userId string, password string) *Zinc {
 }
 
 // ListIndexes List existing indexes
-func (s *Zinc) ListIndexes() {
-	response, err := s.request().Get(s.Host + "/api/index")
-	log.Println(response.String())
-	log.Println(err)
-}
+//func (s *Zinc) ListIndexes() {
+//	response, err := s.request().Get(s.Host + "/api/index")
+//	log.Println(response.String())
+//	log.Println(err)
+//}
 
-// UpdateDocumentWithId
-// Create/Update a document and index it for searches. Provide a doc Id
-func (s *Zinc) UpdateDocumentWithId(target, id string, body interface{}) {
+// UpdateDocumentWithId 根据ID创建/更新文档
+func (s *Zinc) UpdateDocumentWithId(target, id string, body interface{}) error {
 	response, err := s.request().SetBody(body).
 		Put(s.Host + fmt.Sprintf("/api/%v/_doc/%v", target, id))
-	log.Println(response.String())
-	log.Println(err)
+	if err != nil {
+		return err
+	}
+	if response.StatusCode() != 200 {
+		return errors.New(response.String())
+	}
+	return nil
 }
 
-// UpdateDocument
-// Create/Update a document and index it for searches
-func (s *Zinc) UpdateDocument(target string, body interface{}) {
+// UpdateDocument 创建/更新文档
+func (s *Zinc) UpdateDocument(target string, body interface{}) error {
 	response, err := s.request().SetBody(body).
 		Put(s.Host + fmt.Sprintf("/api/%v/document", target))
-	log.Println(response.String())
-	log.Println(err)
+	if err != nil {
+		return err
+	}
+	if response.StatusCode() != 200 {
+		return errors.New(response.String())
+	}
+	return nil
+}
+
+// UpdateDocumentsBulk 批量上传文档
+func (s *Zinc) UpdateDocumentsBulk(body interface{}) error {
+	response, err := s.request().SetBody(body).
+		Post(s.Host + fmt.Sprintf("/api/_bulk"))
+	if err != nil {
+		return err
+	}
+	if response.StatusCode() != 200 {
+		return errors.New(response.String())
+	}
+	return nil
 }
 
 // Search 搜索
@@ -63,8 +83,21 @@ func (s *Zinc) DeleteDocument(target, id string) error {
 	if response.StatusCode() != 200 {
 		return errors.New(response.String())
 	}
-	//parse := gjson.Parse(response.String())
 	return nil
+}
+
+// Version Get current version of ZincSearch
+func (s *Zinc) Version() (Version, error) {
+	var resp Version
+	response, err := s.request().SetResult(&resp).
+		Get(s.Host + fmt.Sprintf("/version"))
+	if err != nil {
+		return Version{}, err
+	}
+	if response.StatusCode() != 200 {
+		return Version{}, errors.New(response.String())
+	}
+	return resp, nil
 }
 
 func (s *Zinc) request() *resty.Request {
