@@ -1,9 +1,10 @@
 package valid
 
 import (
+	"strings"
+
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
-	"strings"
 )
 
 // CoreTranslations registers a set of default translations

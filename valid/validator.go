@@ -1,9 +1,10 @@
 package valid
 
 import (
-	"github.com/go-playground/validator/v10"
 	"reflect"
 	"strings"
+
+	"github.com/go-playground/validator/v10"
 
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/locales/zh"

@@ -2,6 +2,7 @@ package pdf
 
 import (
 	"context"
+
 	"github.com/chromedp/cdproto/page"
 	"github.com/chromedp/chromedp"
 )

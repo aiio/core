@@ -1,10 +1,11 @@
 package valid
 
 import (
-	"github.com/gin-gonic/gin/binding"
-	"github.com/go-playground/validator/v10"
 	"log"
 	"strings"
+
+	"github.com/gin-gonic/gin/binding"
+	"github.com/go-playground/validator/v10"
 )
 
 func init() {

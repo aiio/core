@@ -1,8 +1,9 @@
 package login
 
 import (
-	"gorm.io/gorm"
 	"time"
+
+	"gorm.io/gorm"
 )
 
 // AuthUser 角色

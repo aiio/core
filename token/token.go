@@ -3,8 +3,9 @@ package token
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/aiio/core/config"
 	"time"
+
+	"github.com/aiio/core/config"
 
 	"github.com/dgrijalva/jwt-go/v4"
 )
