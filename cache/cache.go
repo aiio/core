@@ -2,9 +2,10 @@ package cache
 
 import (
 	"context"
-	"github.com/aiio/core/config"
 	"sync"
 	"time"
+
+	"github.com/aiio/core/config"
 
 	"github.com/go-redis/redis/v8"
 )

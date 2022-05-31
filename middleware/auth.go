@@ -1,10 +1,11 @@
 package middleware
 
 import (
-	"github.com/aiio/core"
-	"github.com/aiio/core/token"
 	"net/http"
 	"strings"
+
+	"github.com/aiio/core"
+	"github.com/aiio/core/token"
 
 	"github.com/gin-gonic/gin"
 )

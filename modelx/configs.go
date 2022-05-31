@@ -1,8 +1,9 @@
 package modelx
 
 import (
-	"gorm.io/gorm"
 	"time"
+
+	"gorm.io/gorm"
 )
 
 // ConfigGroup 配置分组
