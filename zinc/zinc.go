@@ -9,20 +9,20 @@ import (
 )
 
 type Zinc struct {
-	Host     string
-	UserId   string
-	Password string
+	host     string
+	userId   string
+	password string
 }
 
 // NewZinc
 // https://docs.zincsearch.com/API%20Reference/
-func NewZinc(host string, userId string, password string) *Zinc {
-	return &Zinc{Host: host, UserId: userId, Password: password}
+func NewZinc(conf *Conf) *Zinc {
+	return &Zinc{host: conf.Host, userId: conf.UserId, password: conf.Password}
 }
 
 // ListIndexes List existing indexes
 //func (s *Zinc) ListIndexes() {
-//	response, err := s.request().Get(s.Host + "/api/index")
+//	response, err := s.request().Get(s.host + "/api/index")
 //	log.Println(response.String())
 //	log.Println(err)
 //}
@@ -30,7 +30,7 @@ func NewZinc(host string, userId string, password string) *Zinc {
 // UpdateDocumentWithId 根据ID创建/更新文档
 func (s *Zinc) UpdateDocumentWithId(target, id string, body interface{}) error {
 	response, err := s.request().SetBody(body).
-		Put(s.Host + fmt.Sprintf("/api/%v/_doc/%v", target, id))
+		Put(s.host + fmt.Sprintf("/api/%v/_doc/%v", target, id))
 	if err != nil {
 		return err
 	}
@@ -43,7 +43,7 @@ func (s *Zinc) UpdateDocumentWithId(target, id string, body interface{}) error {
 // UpdateDocument 创建/更新文档
 func (s *Zinc) UpdateDocument(target string, body interface{}) error {
 	response, err := s.request().SetBody(body).
-		Put(s.Host + fmt.Sprintf("/api/%v/document", target))
+		Put(s.host + fmt.Sprintf("/api/%v/document", target))
 	if err != nil {
 		return err
 	}
@@ -56,7 +56,7 @@ func (s *Zinc) UpdateDocument(target string, body interface{}) error {
 // UpdateDocumentsBulk 批量上传文档
 func (s *Zinc) UpdateDocumentsBulk(body interface{}) error {
 	response, err := s.request().SetBody(body).
-		Post(s.Host + fmt.Sprintf("/api/_bulk"))
+		Post(s.host + fmt.Sprintf("/api/_bulk"))
 	if err != nil {
 		return err
 	}
@@ -69,14 +69,14 @@ func (s *Zinc) UpdateDocumentsBulk(body interface{}) error {
 // Search 搜索
 func (s *Zinc) Search(target string, body interface{}) (string, error) {
 	response, err := s.request().SetBody(body).
-		Post(s.Host + fmt.Sprintf("/api/%v/_search", target))
+		Post(s.host + fmt.Sprintf("/api/%v/_search", target))
 	return response.String(), err
 }
 
 // DeleteDocument 删除一个文档
 func (s *Zinc) DeleteDocument(target, id string) error {
 	response, err := s.request().
-		Delete(s.Host + fmt.Sprintf("/api/%v/_doc/%v", target, id))
+		Delete(s.host + fmt.Sprintf("/api/%v/_doc/%v", target, id))
 	if err != nil {
 		return err
 	}
@@ -90,7 +90,7 @@ func (s *Zinc) DeleteDocument(target, id string) error {
 func (s *Zinc) Version() (Version, error) {
 	var resp Version
 	response, err := s.request().SetResult(&resp).
-		Get(s.Host + fmt.Sprintf("/version"))
+		Get(s.host + fmt.Sprintf("/version"))
 	if err != nil {
 		return Version{}, err
 	}
@@ -101,7 +101,7 @@ func (s *Zinc) Version() (Version, error) {
 }
 
 func (s *Zinc) request() *resty.Request {
-	token := base64.StdEncoding.EncodeToString([]byte(s.UserId + ":" + s.Password))
+	token := base64.StdEncoding.EncodeToString([]byte(s.userId + ":" + s.password))
 	client := resty.New()
 	return client.R().SetAuthToken(token).SetAuthScheme("Basic")
 }
