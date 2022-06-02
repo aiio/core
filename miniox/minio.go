@@ -43,6 +43,11 @@ func (s *Minio) PutObject(bucketName, objectName string, reader io.Reader, objec
 	return s.client.PutObject(context.Background(), bucketName, objectName, reader, objectSize, minio.PutObjectOptions{})
 }
 
+// FPutObject 文件上传
+func (s *Minio) FPutObject(bucketName, objectName, filePath string) (minio.UploadInfo, error) {
+	return s.client.FPutObject(context.Background(), bucketName, objectName, filePath, minio.PutObjectOptions{})
+}
+
 // GetObject 获取
 func (s *Minio) GetObject(bucketName, objectName string) (*minio.Object, error) {
 	return s.client.GetObject(context.Background(), bucketName, objectName, minio.GetObjectOptions{})
