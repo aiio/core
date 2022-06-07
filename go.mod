@@ -8,7 +8,7 @@ require (
 	github.com/chromedp/chromedp v0.8.2
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 	github.com/ethereum/go-ethereum v1.10.18
-	github.com/gin-gonic/gin v1.8.0
+	github.com/gin-gonic/gin v1.8.1
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
 	github.com/go-playground/validator/v10 v10.11.0
