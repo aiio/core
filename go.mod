@@ -17,7 +17,7 @@ require (
 	github.com/gogf/gf v1.16.9
 	github.com/google/uuid v1.3.0
 	github.com/joho/godotenv v1.4.0
-	github.com/minio/minio-go/v7 v7.0.27
+	github.com/minio/minio-go/v7 v7.0.28
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.417
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.417
 	github.com/tidwall/gjson v1.14.1
