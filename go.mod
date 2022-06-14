@@ -19,7 +19,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/joho/godotenv v1.4.0
-	github.com/lib/pq v1.2.0
+	github.com/lib/pq v1.10.6
 	github.com/mattn/go-sqlite3 v1.14.13
 	github.com/minio/minio-go/v7 v7.0.28
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.418
