@@ -22,8 +22,8 @@ require (
 	github.com/lib/pq v1.2.0
 	github.com/mattn/go-sqlite3 v1.14.13
 	github.com/minio/minio-go/v7 v7.0.28
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.418
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.418
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.419
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.419
 	github.com/tidwall/gjson v1.14.1
 	github.com/volcengine/volc-sdk-golang v1.0.47
 	go.uber.org/zap v1.21.0
