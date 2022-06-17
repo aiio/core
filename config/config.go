@@ -11,6 +11,9 @@ import (
 
 // GetEnv GetEnv
 func GetEnv(key string) (value string) {
+	if len(key) == 0 {
+		return ""
+	}
 	return os.Getenv(key)
 }
 

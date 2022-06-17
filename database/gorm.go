@@ -16,6 +16,9 @@ import (
 
 // InitGorm 初始化一个gorm.DB
 func InitGorm(engine, dsn, tablePrefix string) *gorm.DB {
+	if len(engine) == 0 || len(dsn) == 0 {
+		panic("engine or dsn  error")
+	}
 	var dialector gorm.Dialector
 	switch engine {
 	case "mysql":
@@ -48,7 +51,10 @@ func InitGorm(engine, dsn, tablePrefix string) *gorm.DB {
 
 // InitGormEnv 根据环境变量  初始化一个gorm.DB
 func InitGormEnv(envEngineName, envDsnName, envPrefixName string) *gorm.DB {
-	return InitGormEnv(config.GetEnv(envEngineName), config.GetEnv(envDsnName), config.GetEnv(envPrefixName))
+	if len(envEngineName) == 0 || len(envDsnName) == 0 {
+		panic("engine or dsn  error")
+	}
+	return InitGorm(config.GetEnv(envEngineName), config.GetEnv(envDsnName), config.GetEnv(envPrefixName))
 }
 
 // InitGormTag 根据Tag环境变量  初始化一个gorm.DB
