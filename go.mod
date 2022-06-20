@@ -21,7 +21,7 @@ require (
 	github.com/joho/godotenv v1.4.0
 	github.com/lib/pq v1.10.6
 	github.com/mattn/go-sqlite3 v1.14.13
-	github.com/minio/minio-go/v7 v7.0.28
+	github.com/minio/minio-go/v7 v7.0.29
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.423
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.423
 	github.com/tidwall/gjson v1.14.1
