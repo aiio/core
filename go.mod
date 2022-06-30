@@ -3,7 +3,7 @@ module github.com/aiio/core
 go 1.18
 
 require (
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1658
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1660
 	github.com/chromedp/cdproto v0.0.0-20220515234810-83d799542a04
 	github.com/chromedp/chromedp v0.8.2
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
