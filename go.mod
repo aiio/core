@@ -27,7 +27,7 @@ require (
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.431
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
-	github.com/volcengine/volc-sdk-golang v1.0.49
+	github.com/volcengine/volc-sdk-golang v1.0.50
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
