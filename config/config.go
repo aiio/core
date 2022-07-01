@@ -52,7 +52,7 @@ func GetDefaultEnvToInt(key string, defaultValue int) (value int) {
 // GetEnvToBool GetEnvToBool
 func GetEnvToBool(key string) (value bool) {
 	switch strings.ToUpper(GetEnv(key)) {
-	case "TRUE", "true":
+	case "TRUE":
 		return true
 	default:
 		return false
