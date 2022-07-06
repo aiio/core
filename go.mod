@@ -23,8 +23,8 @@ require (
 	github.com/matoous/go-nanoid/v2 v2.0.0
 	github.com/mattn/go-sqlite3 v1.14.14
 	github.com/minio/minio-go/v7 v7.0.30
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.435
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.435
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.436
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.436
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
 	github.com/volcengine/volc-sdk-golang v1.0.50
