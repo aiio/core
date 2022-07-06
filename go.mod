@@ -23,18 +23,19 @@ require (
 	github.com/matoous/go-nanoid/v2 v2.0.0
 	github.com/mattn/go-sqlite3 v1.14.14
 	github.com/minio/minio-go/v7 v7.0.30
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.435
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.435
+	github.com/sony/sonyflake v1.0.0
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.436
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.436
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
 	github.com/volcengine/volc-sdk-golang v1.0.50
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
-	gorm.io/driver/clickhouse v0.4.1
+	gorm.io/driver/clickhouse v0.4.2
 	gorm.io/driver/mysql v1.3.4
 	gorm.io/driver/postgres v1.3.8
-	gorm.io/driver/sqlite v1.3.5
+	gorm.io/driver/sqlite v1.3.6
 	gorm.io/driver/sqlserver v1.3.2
 	gorm.io/gorm v1.23.7
 )
