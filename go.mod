@@ -31,7 +31,7 @@ require (
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
-	gorm.io/driver/clickhouse v0.4.1
+	gorm.io/driver/clickhouse v0.4.2
 	gorm.io/driver/mysql v1.3.4
 	gorm.io/driver/postgres v1.3.8
 	gorm.io/driver/sqlite v1.3.5
