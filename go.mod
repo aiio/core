@@ -22,7 +22,7 @@ require (
 	github.com/lib/pq v1.10.6
 	github.com/matoous/go-nanoid/v2 v2.0.0
 	github.com/mattn/go-sqlite3 v1.14.14
-	github.com/minio/minio-go/v7 v7.0.30
+	github.com/minio/minio-go/v7 v7.0.31
 	github.com/sony/sonyflake v1.0.0
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.437
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.437
