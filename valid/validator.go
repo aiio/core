@@ -10,7 +10,7 @@ import (
 	"github.com/go-playground/locales/zh"
 	ut "github.com/go-playground/universal-translator"
 	zhTranslations "github.com/go-playground/validator/v10/translations/zh"
-	"github.com/gogf/gf/util/gconv"
+	"github.com/gogf/gf/v2/util/gconv"
 )
 
 var Trans ut.Translator

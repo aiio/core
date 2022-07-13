@@ -15,7 +15,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/go-sql-driver/mysql v1.6.0
-	github.com/gogf/gf v1.16.9
+	github.com/gogf/gf/v2 v2.1.2
 	github.com/google/uuid v1.3.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/joho/godotenv v1.4.0
@@ -29,8 +29,9 @@ require (
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
 	github.com/volcengine/volc-sdk-golang v1.0.51
+	github.com/yitter/idgenerator-go v1.3.1
 	go.uber.org/zap v1.21.0
-	golang.org/x/text v0.3.7
+	golang.org/x/text v0.3.8-0.20211105212822-18b340fc7af2
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 	gorm.io/driver/clickhouse v0.4.2
 	gorm.io/driver/mysql v1.3.5
@@ -61,7 +62,7 @@ require (
 	github.com/goccy/go-json v0.9.7 // indirect
 	github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe // indirect
 	github.com/golang-sql/sqlexp v0.0.0-20170517235910-f1bb20e5a188 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.12.1 // indirect
