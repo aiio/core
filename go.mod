@@ -3,7 +3,7 @@ module github.com/aiio/core
 go 1.18
 
 require (
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1674
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1675
 	github.com/chromedp/cdproto v0.0.0-20220629234738-4cfc9cdeeb92
 	github.com/chromedp/chromedp v0.8.2
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
@@ -24,8 +24,8 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.14
 	github.com/minio/minio-go/v7 v7.0.31
 	github.com/sony/sonyflake v1.0.0
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.442
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.442
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.443
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.443
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
 	github.com/volcengine/volc-sdk-golang v1.0.51
