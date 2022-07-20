@@ -25,8 +25,8 @@ require (
 	github.com/minio/minio-go/v7 v7.0.31
 	github.com/nsqio/go-nsq v1.1.0
 	github.com/sony/sonyflake v1.0.0
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.445
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.445
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.446
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.446
 	github.com/tidwall/gjson v1.14.1
 	github.com/upper/db/v4 v4.5.4
 	github.com/volcengine/volc-sdk-golang v1.0.51
