@@ -9,10 +9,10 @@ import (
 
 // H common struct
 type H struct {
-	Code  int         `json:"code"`
-	Msg   string      `json:"msg"`
-	Data  interface{} `json:"data,omitempty"`
-	Other interface{} `json:"other,omitempty"`
+	Code  int    `json:"code"`
+	Msg   string `json:"msg"`
+	Data  any    `json:"data,omitempty"`
+	Other any    `json:"other,omitempty"`
 }
 
 // RespErr 错误返回结构
@@ -21,7 +21,7 @@ func RespErr(code int, msg string) *H {
 }
 
 // Resp Resp
-func Resp(code int, msg string, data interface{}) *H {
+func Resp(code int, msg string, data any) *H {
 	return &H{Code: code, Msg: msg, Data: data}
 }
 
@@ -29,11 +29,11 @@ func AuthErr(msg string) *H {
 	return &H{Code: codex.AuthErr, Msg: msg}
 }
 
-func Response(code int, msg string, data, other interface{}) *H {
+func Response(code int, msg string, data, other any) *H {
 	return &H{Code: code, Msg: msg, Data: data, Other: other}
 }
 
-func List(data, other interface{}) *H {
+func List(data, other any) *H {
 	return &H{Code: codex.Success, Msg: "success", Data: data, Other: other}
 }
 
@@ -42,12 +42,12 @@ func Success() *H {
 }
 
 // Data Data
-func Data(data interface{}) *H {
+func Data(data any) *H {
 	return &H{Code: codex.Success, Msg: "success", Data: data}
 }
 
 // NewH NewH
-func NewH(data interface{}) *H {
+func NewH(data any) *H {
 	return &H{Code: codex.Success, Msg: "success", Data: data}
 }
 
