@@ -3,7 +3,7 @@ module github.com/aiio/core
 go 1.18
 
 require (
-	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1691
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1696
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 	github.com/ethereum/go-ethereum v1.10.20
 	github.com/gin-gonic/gin v1.8.1
